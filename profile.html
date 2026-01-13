@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Aryan Marghade</title>
+
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            background-image: url("https://img.freepik.com/free-vector/modern-abstract-white-minimal-background_84443-8335.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .portfolio {
+            background-color: #f7f7f7;
+            width: 90%;
+            max-width: 680px;
+            padding: 34px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-pic {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            animation: pulse 3s infinite;
+        }
+
+        h1 {
+            margin: 10px 0 6px;
+            font-size: 27px;
+            color: #222;
+        }
+
+        h2 {
+            margin: 36px 0 14px;
+            color: #333;
+            font-size: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 14px;
+        }
+
+        ul li {
+            background: #eef1f5;
+            margin: 9px 0;
+            padding: 11px;
+            border-radius: 9px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+            font-size: 14.5px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(6px);
+            background: #dde4ec;
+        }
+
+        button {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 7px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #444;
+            transform: scale(1.05);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-left {
+            transform: translateX(-40px);
+        }
+
+        .slide-right {
+            transform: translateX(40px);
+        }
+
+        .slide-left.show,
+        .slide-right.show {
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+                align-items: flex-start;
+            }
+
+            .portfolio {
+                width: 100%;
+                padding: 24px;
+            }
+
+            .profile-pic {
+                width: 115px;
+                height: 115px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p, li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="portfolio">
+
+    <img src="profileiamge.jpeg" alt="Profile Photo" class="profile-pic reveal">
+
+    <h1 class="reveal">Aryan Marghade</h1>
+    <p class="reveal"><b>College Student</b> – Symbiosis Institute of Technology (SIT), Nagpur</p>
+
+    <h2 class="reveal slide-left">About Me</h2>
+    <p class="reveal">
+        First-year B.Tech student (Second Semester) at Symbiosis Institute of Technology (SIT),
+        Nagpur, with a keen interest in networking, hackathons, and hands-on technical learning.
+    </p>
+
+    <h2 class="reveal slide-right">Skills</h2>
+    <ul class="reveal">
+        <li>HTML & CSS</li>
+        <li>Python (Basic)</li>
+        <li>Networking</li>
+        <li>C Programming</li>
+        <li>C++ Programming</li>
+    </ul>
+
+    <h2 class="reveal slide-left">Education</h2>
+    <p class="reveal">
+        <b>Class 10 (2022)</b> – Maharashtra State Board (SSC)<br>
+        Saraswati Vidyalaya, Nagpur
+    </p>
+    <p class="reveal">
+        <b>Class 12 (2025)</b> – Science (Computer Science), Maharashtra State Board (HSC)<br>
+        Tiptop Convent School, Nagpur
+    </p>
+    <p class="reveal">
+        <b>B.Tech – Computer Science (2025–2029)</b><br>
+        Symbiosis Institute of Technology, Nagpur
+    </p>
+
+    <h2 class="reveal slide-right">Projects</h2>
+    <p class="reveal">
+        • Functional Website Calculator<br>
+        • Capture The Flag (Linux-based)<br>
+        • Arduino UNO – Traffic Light & LED System<br>
+        • Random Number Guessing Game (C)<br>
+        • Multi-Functional Calculator (C)<br>
+        • Online Food Ordering Website
+    </p>
+
+    <h2 class="reveal slide-left">Career Interest</h2>
+    <p class="reveal">
+        Aspiring Network and Security professional with a strong interest in firewalls,
+        system protection, and infrastructure security.
+    </p>
+
+</div>
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
