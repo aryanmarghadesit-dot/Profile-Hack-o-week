@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aryan Marghade</title>
 
 <style>
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -18,12 +19,13 @@ body {
   overflow-x: hidden;
 }
 
-/* Background video */
+/* BACKGROUND VIDEO */
 .video-bg {
   position: fixed;
   inset: 0;
   z-index: -2;
 }
+
 .video-bg video {
   width: 100%;
   height: 100%;
@@ -33,50 +35,46 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75));
+  background: linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.85)
+  );
   z-index: -1;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 8%;
+  padding: 80px 8%;
 }
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 60px;
-  align-items: center;
   max-width: 1100px;
   width: 100%;
+  align-items: center;
 }
 
 /* PROFILE IMAGE */
 .profile-img {
   display: flex;
   justify-content: center;
-  animation: slideLeft 1s ease forwards;
-  opacity: 0;
 }
 
-.profile-img img {
+.profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
-/* TEXT */
-.hero-text {
-  animation: slideRight 1s ease forwards;
-  opacity: 0;
-}
-
+/* HERO TEXT */
 .hero-text h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -93,61 +91,48 @@ body {
   color: #e0e0e0;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .buttons {
-  display: flex;
-  gap: 15px;
+  margin-top: 20px;
 }
 
 .buttons button {
-  padding: 12px 26px;
+  padding: 12px 28px;
   border-radius: 30px;
   border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: .3s;
-}
-
-.btn-primary {
   background: #00ffe7;
   color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn-primary:hover {
+.buttons button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #00ffe7;
+  box-shadow: 0 0 18px #00ffe7;
 }
 
-/* ABOUT */
+/* ABOUT SECTION */
 .scroll-section {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
-  padding: 100px 8%;
+  padding: 120px 8%;
   text-align: center;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,0.9);
 }
 
 .scroll-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .scroll-section p {
-  max-width: 700px;
+  max-width: 750px;
   margin: auto;
   font-size: 1.1rem;
   line-height: 1.7;
   color: #ddd;
-}
-
-/* ANIMATIONS */
-@keyframes slideLeft {
-  from { transform: translateX(-80px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideRight {
-  from { transform: translateX(80px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
 }
 
 /* RESPONSIVE */
@@ -157,35 +142,27 @@ body {
     text-align: center;
   }
 
-  .buttons {
-    justify-content: center;
+  .hero {
+    padding-top: 120px;
   }
 
   .hero-text h1 {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
 }
 
 @media (max-width: 600px) {
-  .hero {
-    padding: 40px 6%;
-  }
-
-  .profile-img img {
+  .profile-pic {
     width: 160px;
     height: 160px;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
   }
 
   .hero-text p {
     font-size: 1rem;
   }
 
-  .buttons button {
-    width: 100%;
+  .scroll-section h2 {
+    font-size: 2rem;
   }
 }
 </style>
@@ -193,6 +170,7 @@ body {
 
 <body>
 
+<!-- BACKGROUND VIDEO -->
 <div class="video-bg">
   <video autoplay muted loop playsinline>
     <source src="back.mp4" type="video/mp4">
@@ -201,24 +179,25 @@ body {
 
 <div class="overlay"></div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
 
     <div class="profile-img">
-      <img src="profileiamge.jpeg" alt="Aryan Marghade">
+      <img src="profileiamge.jpeg" alt="Aryan Marghade" class="profile-pic">
     </div>
 
     <div class="hero-text">
       <h1><span>Aryan Marghade</span></h1>
       <p>
-        B.Tech Computer Science student at  
-        <strong>Symbiosis Institute of Technology, Nagpur</strong>.  
+        B.Tech Computer Science student at
+        <strong>Symbiosis Institute of Technology, Nagpur</strong>.
         Passionate about Networking, Linux, Security & Tech.
       </p>
 
       <div class="buttons">
         <a href="profile.html" target="_blank">
-          <button class="btn-primary">View Profile</button>
+          <button>View Profile</button>
         </a>
       </div>
     </div>
@@ -226,6 +205,7 @@ body {
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="scroll-section">
   <h2>About Me</h2>
   <p>
